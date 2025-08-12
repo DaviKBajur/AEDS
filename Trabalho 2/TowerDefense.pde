@@ -4,8 +4,8 @@ import java.util.*;
 final int GRID_WIDTH = 40;
 final int GRID_HEIGHT = 30;
 final int CELL_SIZE = 20;
-final int STARTING_MONEY = 150;
-final int WAVES_TO_WIN = 10;
+final int STARTING_MONEY = 100000000;
+final int WAVES_TO_WIN = 20;
 final float GAME_SPEED_NORMAL = 1.0f;
 final float GAME_SPEED_FAST = 2.0f;
 
@@ -17,6 +17,9 @@ Player player;
 UI ui;
 float gameSpeed = GAME_SPEED_NORMAL;
 
+
+PImage img;
+
 void setup() {
     size(800, 600);
     gameState = new GameState();
@@ -24,19 +27,20 @@ void setup() {
     waveManager = new WaveManager();
     player = new Player(STARTING_MONEY);
     ui = new UI();
+    img = loadImage("Money.png");
 }
 
 void draw() {
     background(50, 100, 50);
     
+    
     gameGrid.update();
     gameGrid.display();
-    
     waveManager.update();
     waveManager.display();
-    
     ui.display();
-    
+  //  imageMode();
+    image(img, 0, (height / 2)-27, 50,50);
     if (gameState.isGameOver()) {
         displayGameOver();
     }
@@ -82,7 +86,7 @@ void displayGameOver() {
         text("Você sobreviveu a " + WAVES_TO_WIN + " ondas!", width/2, height/2 + 20);
     } else {
         text("DERROTA!", width/2, height/2 - 20);
-        text("O núcleo foi destruído!", width/2, height/2 + 20);
+        text("O dinheiro foi capturado!", width/2, height/2 + 20);
     }
     
     textSize(16);

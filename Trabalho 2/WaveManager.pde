@@ -69,7 +69,7 @@ class WaveManager {
     
     private PVector getRandomSpawnPosition() {
         int x = GRID_WIDTH - 1;
-        int y = (int)random(GRID_HEIGHT);
+        int y = GRID_HEIGHT/2;                                  //(int)random(GRID_HEIGHT);
         return new PVector(x, y);
     }
     
@@ -92,6 +92,7 @@ class WaveManager {
         delay(2000);
         startWave();
     }
+    //davi kaua obarim!!!!!!!!!! lindo!!!!!!!!!111
     
     void display() {
         fill(255);

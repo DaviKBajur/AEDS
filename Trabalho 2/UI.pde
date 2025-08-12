@@ -6,7 +6,7 @@ enum StructureType {
 
 class UI {
     private StructureType selectedStructure;
-    private final int WALL_COST = 12;
+    private final int WALL_COST = 5;
     private final int SAND_COST = 6;
     private final int TOWER_COST = 50;
     

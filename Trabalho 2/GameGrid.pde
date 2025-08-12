@@ -3,7 +3,7 @@ enum CellType {
     WALL,
     WALL_DAMAGED,
     SAND,
-    TOWER,
+    TOWER1,
     CORE,
     SPAWN
 }
@@ -38,6 +38,9 @@ class GameGrid {
         }
         
         corePosition = new PVector(0, height / 2);
+        
+        
+
         grid[(int)corePosition.x][(int)corePosition.y] = CellType.CORE;
         
         for (int y = 0; y < height; y++) {
@@ -62,7 +65,7 @@ class GameGrid {
                 grid[x][y] = CellType.SAND;
                 break;
             case TOWER:
-                grid[x][y] = CellType.TOWER;
+                grid[x][y] = CellType.TOWER1;
                 towers.add(new Tower(x * cellSize + cellSize/2, y * cellSize + cellSize/2));
                 break;
         }
@@ -263,7 +266,7 @@ class GameGrid {
                     target.takeDamage(damage);
                     
                     if (target.isDead()) {
-                        tower.addXP(5);
+                        tower.addXP(2);
                     }
                 }
             }
@@ -313,7 +316,7 @@ class GameGrid {
                     case SAND:
                         fill(194, 178, 128);
                         break;
-                    case TOWER:
+                    case TOWER1:
                         fill(50, 50, 150);
                         break;
                     case CORE:

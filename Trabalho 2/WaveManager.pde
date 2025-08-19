@@ -92,7 +92,7 @@ class WaveManager {
         delay(2000);
         startWave();
     }
-    //davi kaua obarim!!!!!!!!!! lindo!!!!!!!!!111
+    
     
     void display() {
         fill(255);

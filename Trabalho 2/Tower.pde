@@ -66,15 +66,15 @@ class Tower {
     
     void display() {
         fill(50, 50, 150);
-        rect(position.x - 8, position.y - 8, 16, 16);
-        
+        rect(position.x - 8, position.y - 8, 16, 16);                   //!!!!!!!!!!!!!!!!!!!!!!
+          
         fill(0, 255, 0, 50);
         ellipse(position.x, position.y, range * 2, range * 2);
         
         fill(255, 0, 0);
         textAlign(CENTER, CENTER);
         textSize(10);
-        text("Lv." + level, position.x, position.y);
+        text("Lv." + level, (position.x), (position.y-15));
         
         displayXPBar();
     }
